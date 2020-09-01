@@ -11,7 +11,6 @@ const dashboardRoutes: Routes = [
   { path: '', component: VideoDashboardComponent }
 ];
 
-
 @NgModule({
   declarations: [VideoDashboardComponent, VideoListComponent, VideoPlayerComponent, StatFiltersComponent],
   imports: [
