@@ -1,10 +1,9 @@
 <ul>
-  <li *ngFor="let video of videos"
-      [class.video-selected]="video === selectedVideo"
-      (click)="selectVideo(video)"
-  >
-    <strong>{{video.title}}</strong>
-    <br>
-    <em>{{video.author}}</em>
-  </li>
+  <app-video-list-item
+    *ngFor="let video of videos; index as i"
+    [class.video-selected]="video === selectedVideo"
+    (click)="selectVideo(video)"
+    [videoData]="video"
+    [videoNumber]="i"
+  ></app-video-list-item>
 </ul>

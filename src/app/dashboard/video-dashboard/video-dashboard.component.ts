@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { videoData } from '../../../assets/video-data';
 
 @Component({
   selector: 'app-video-dashboard',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./video-dashboard.component.scss']
 })
 export class VideoDashboardComponent implements OnInit {
+  videoList = videoData;
 
   constructor() { }
 
