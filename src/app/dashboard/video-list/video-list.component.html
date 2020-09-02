@@ -1,5 +1,8 @@
 <ul>
-  <li *ngFor="let video of videos">
+  <li *ngFor="let video of videos"
+      [class.video-selected]="video === selectedVideo"
+      (click)="selectVideo(video)"
+  >
     <strong>{{video.title}}</strong>
     <br>
     <em>{{video.author}}</em>
