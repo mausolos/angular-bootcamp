@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { videoData } from '../../../assets/video-data';
+import { videoData, VideoData } from '../../../assets/video-data';
 
 @Component({
   selector: 'app-video-dashboard',
@@ -9,9 +9,15 @@ import { videoData } from '../../../assets/video-data';
 export class VideoDashboardComponent implements OnInit {
   videoList = videoData;
 
+  currentVideo: VideoData;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  currentVideoSelected(video: VideoData): void {
+    this.currentVideo = video;
   }
 
 }

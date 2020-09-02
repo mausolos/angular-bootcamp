@@ -1,3 +1,16 @@
+export interface ViewDetails {
+  age: number;
+  region: string;
+  date: string;
+}
+
+export interface VideoData {
+  title: string;
+  author: string;
+  id: string;
+  viewDetails: ViewDetails[];
+}
+
 export const videoData = [
   {
     title: 'Angular Observable Data Flow',
