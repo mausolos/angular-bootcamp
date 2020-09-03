@@ -4,6 +4,6 @@
   (videoSelected)="currentVideoSelected($event)"
 ></app-video-list>
 <app-video-player
-  [video]="currentVideo"
+  [video]="currentVideo | async"
 ></app-video-player>
 <app-stat-filters></app-stat-filters>

@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
+import { VideoDataService } from '../../video-data.service';
 import { VideoData } from '../../../assets/video-data';
+
 
 @Component({
   selector: 'app-video-dashboard',
@@ -9,21 +11,14 @@ import { VideoData } from '../../../assets/video-data';
   styleUrls: ['./video-dashboard.component.scss']
 })
 export class VideoDashboardComponent implements OnInit {
-  videoList;
+  videoList: Observable<VideoData[]>;
 
   currentVideo: VideoData;
 
-  constructor(
-    httpClient: HttpClient
-  ) {
-    httpClient
-      .get('https://api.angularbootcamp.com/videos')
-      .subscribe((videoList) => {
-        this.videoList = videoList;
-      });
-  }
+  constructor(private videoService: VideoDataService) {}
 
   ngOnInit(): void {
+    this.videoList = this.videoService.getVideoData();
   }
 
   currentVideoSelected(video: VideoData): void {
